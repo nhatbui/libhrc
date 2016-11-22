@@ -1,0 +1,25 @@
+{
+  "name": "libhrc",
+  "version": "0.0.1",
+  "description": "Human-Readable Compression",
+  "main": "test/simpleStringTest.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhatbui/compakt.git"
+  },
+  "keywords": [
+    "Compression",
+    "Javascript"
+  ],
+  "author": "Nhat Bui",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nhatbui/compakt/issues"
+  },
+  "homepage": "https://github.com/nhatbui/compakt#readme"
+}

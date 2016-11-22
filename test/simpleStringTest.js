@@ -1,0 +1,27 @@
+var getLRS = require("../lib/lrs.js");
+var tagRepeats = require("../lib/tagRepeats.js");
+var ShuffixArray = require("../lib/shuffixArray.js");
+
+var testString = function(s, tag=true, multiplier=' x', left_tag='<', right_tag='>') {
+  console.log("Test: '" + s + "'");
+  var lrs = getLRS(s);
+  if (lrs.length > 0) {
+    console.log("Result: '" + tagRepeats(lrs, s, tag, multiplier, left_tag, right_tag) + "'");
+  }
+}
+
+// Twitch chat characteristics:
+// - trimmed (no white space(s) at beginning and end)
+// - single spaces between words
+testString("simple repeat simple repeat simple repeat");
+testString("extra words at the start simple repeat simple repeat simple repeat");
+testString("simple repeat simple repeat simple repeat extra words at the end");
+testString("wrapped at start simple repeat simple repeat simple repeat and at the end")
+testString("simple repeat simple repeat simple repeat.");
+testString("Capitalization not handled capitalization Not Handled!");
+testString("you youngings");
+testString("this is the best");
+testString("kung fu fun");
+testString("check it out, no tags: repeated message but no tags repeated message but no tags", false);
+testString("free coins free coins free coins free coins free coins", true, " ↑");
+testString("Si se puede Si se puede Si se puede", true, ' x', '¡', '!');
