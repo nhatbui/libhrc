@@ -1,0 +1,2 @@
+# libhrc
+Human-Readable Compression
