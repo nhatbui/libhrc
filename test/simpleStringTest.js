@@ -25,3 +25,5 @@ testString("check it out, no tags: repeated message but no tags repeated message
 testString("free coins free coins free coins free coins free coins", true, " ↑");
 testString("Si se puede Si se puede Si se puede", true, ' x', '¡', '!');
 testString("Duck Duck Goose Duck");
+testString("");
+testString("oneword");
