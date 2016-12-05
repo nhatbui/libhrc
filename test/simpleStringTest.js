@@ -1,7 +1,7 @@
 var libhrc = require("../lib/libhrc.js");
 
 
-var testString = function(s, tag=true, multiplier=' x', left_tag='<', right_tag='>') {
+var testString = function(s, tag=true, multiplier=' x', left_tag='<', right_tag='> ') {
   console.log("Test: '" + s + "'");
   var lrs = libhrc.findLRS(s);
   if (lrs.length > 0) {
