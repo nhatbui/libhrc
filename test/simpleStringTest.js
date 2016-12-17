@@ -16,7 +16,7 @@ testString("simple repeat simple repeat simple repeat");
 testString("extra words at the start simple repeat simple repeat simple repeat");
 testString("simple repeat simple repeat simple repeat extra words at the end");
 testString("wrapped at start simple repeat simple repeat simple repeat and at the end")
-testString("simple repeat simple repeat simple repeat.");
+testString("simple repeat simple repeat simple repeat. <-- period messes things up!");
 testString("Capitalization not handled capitalization Not Handled!");
 testString("you youngings");
 testString("this is the best");
