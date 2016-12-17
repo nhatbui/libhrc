@@ -4,6 +4,7 @@ var libhrc = require("../lib/libhrc.js");
 var testString = function(s, tag=true, multiplier=' x', left_tag='<', right_tag='> ') {
   console.log("Test: '" + s + "'");
   var lrs = libhrc.findLRS(s);
+  console.log("LRS: '" + lrs + "'");
   if (lrs.length > 0) {
     console.log("Result: '" + libhrc.tagRepeatedPhrases(lrs, s, tag, multiplier, left_tag, right_tag) + "'");
   }
@@ -27,3 +28,4 @@ testString("Si se puede Si se puede Si se puede", true, ' x', '¡', '!');
 testString("Duck Duck Goose Duck");
 testString("");
 testString("oneword");
+testString("multi run multi run INTERRUPTION multi run multi run multi run");
