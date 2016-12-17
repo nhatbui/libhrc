@@ -29,3 +29,5 @@ testString("Duck Duck Goose Duck");
 testString("");
 testString("oneword");
 testString("multi run multi run INTERRUPTION multi run multi run multi run");
+testString("y y z y y y BUT THIS WORKS, interruption is lexicographically greater than.");
+testString("KKona 🎸 KKona 🎸 KKona emojis baby");
