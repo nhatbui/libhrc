@@ -101,3 +101,8 @@ testString(
   'y y y y yolo baggins y y y y',
   '<y y x2> yolo baggins <y y x2>'
 );
+testString(
+  'yayayayayoloabagginsayayayay',
+  '<yay x2>ayoloabagginsa<yay x2>',
+  'a'
+);
