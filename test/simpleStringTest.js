@@ -4,12 +4,13 @@ var libhrc = require('../lib/libhrc.js');
 
 var testString = function(s,
                           truth=null,
+                          delimiter=' ',
                           showNum=true,
                           multiplier=' x',
                           left_tag='<',
                           right_tag='>') {
   console.log("Test: '" + s + "'");
-  var newDoc = libhrc.naive_compress(s, showNum, multiplier, left_tag, right_tag);
+  var newDoc = libhrc.naive_compress(s, delimiter, showNum, multiplier, left_tag, right_tag);
   console.log("Result: '" + newDoc + "'");
   if (truth) {
     assert.deepStrictEqual(newDoc, truth);
@@ -58,15 +59,19 @@ testString(
 testString(
   'check it out, no tags: repeated message but no tags repeated message but no tags',
   'check it out, no tags: repeated message but no tags',
-  false, '', '', '');
+  ' ', false, '', '', '');
 testString(
   'free coins free coins free coins free coins free coins',
-  '<free coins ↑5>',
-  true, ' ↑');
+  '<free coins free coins ↑2> free coins',
+  ' ', true, ' ↑');
+testString(
+  'free coins free coins free coins free coins',
+  '<free coins free coins ↑2>',
+  ' ', true, ' ↑');
 testString(
   'Si se puede Si se puede Si se puede',
   '¡Si se puede x3!',
-  true, ' x', '¡', '!');
+  ' ', true, ' x', '¡', '!');
 testString(
   'Duck Duck Goose Duck',
   '<Duck x2> Goose Duck'
@@ -87,4 +92,17 @@ testString(
 testString(
   'KKona 🎸 KKona 🎸 KKona emojis baby',
   'KKona <🎸 KKona x2> emojis baby'
+);
+testString(
+  'y y y yolo baggins y y y y',
+  'y y y yolo baggins <y y x2>'
+);
+testString(
+  'y y y y yolo baggins y y y y',
+  '<y y x2> yolo baggins <y y x2>'
+);
+testString(
+  'yayayayayoloabagginsayayayay',
+  '<yay x2>ayoloabagginsa<yay x2>',
+  'a'
 );
