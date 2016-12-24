@@ -17,6 +17,21 @@ var testString = function(s,
   }
 };
 
+var testStringGreedy = function(s,
+                          truth=null,
+                          delimiter=' ',
+                          showNum=true,
+                          multiplier=' x',
+                          left_tag='<',
+                          right_tag='>') {
+  console.log("Test: '" + s + "'");
+  var newDoc = libhrc.greedy_compress(s, delimiter, showNum, multiplier, left_tag, right_tag);
+  console.log("Result: '" + newDoc + "'");
+  if (truth) {
+    assert.deepStrictEqual(newDoc, truth);
+  }
+};
+
 // Twitch chat characteristics:
 // - trimmed (no white space(s) at beginning and end)
 // - single spaces between words
@@ -105,4 +120,12 @@ testString(
   'yayayayayoloabagginsayayayay',
   '<yay x2>ayoloabagginsa<yay x2>',
   'a'
+);
+testStringGreedy(
+  'y b y b y b b b b b b',
+  '<y b x2> y <b b b x2>'
+);
+testStringGreedy(
+  'y b y b y b n b n b n b',
+  '<y b x3> <n b x3>'
 );
