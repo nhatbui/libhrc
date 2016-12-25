@@ -1,6 +1,6 @@
 {
   "name": "libhrc",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Human-Readable Compression",
   "main": "./lib/libhrc.js",
   "bin": {
