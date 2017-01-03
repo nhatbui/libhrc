@@ -10,7 +10,7 @@ var s = "Yolo Baggins Yolo Baggins Yolo Baggins Baggins Baggins Baggins Baggins 
 console.log(libhrc.greedy_compress(s, ' ', true, ' x', '<', '>'));
 ```
 
-[Demo](http://compakt.nhatqbui.com)
+[Demo](http://compakt.nhatqbui.com/#demo)
 
 # Installation
 
