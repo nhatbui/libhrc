@@ -123,9 +123,13 @@ testString(
 );
 testStringGreedy(
   'y b y b y b b b b b b',
-  '<y b x2> y <b b b x2>'
+  '<y b x2> y <b x6>'
 );
 testStringGreedy(
   'y b y b y b n b n b n b',
   '<y b x3> <n b x3>'
+);
+testStringGreedy(
+  'Kappa Kappa Kappa Kappa',
+  '<Kappa x4>'
 );
